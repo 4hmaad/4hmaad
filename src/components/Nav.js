@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { ThemeContext } from "../theme/ThemeProvider"
+import { ThemeContext } from "./ThemeProvider"
 
 import LogoIcon from "./../../static/logo.react.svg"
 import SunIcon from "./../../static/sun.react.svg"
@@ -59,7 +59,6 @@ const ThemeToggler = styled.div`
   cursor: pointer;
   & > svg {
     fill: ${props => props.theme.text};
-    vertical-align: bottom;
   }
 `
 
@@ -71,15 +70,18 @@ const Nav = () => {
         <Logo />
       </Link>
 
-      <NavUi class="navbar__menu">
+      <NavUi>
         <NavLi>
-          <a href="#">About</a>
+          <a href="/#">About</a>
         </NavLi>
         <NavLi>
-          <a href="#">Services</a>
+          <a href="/#">Services</a>
         </NavLi>
         <NavLi>
           <Link to="/blog">Blog</Link>
+        </NavLi>
+        <NavLi>
+          <Link to="/blog">Contact</Link>
         </NavLi>
         <NavLi>
           <ThemeToggler onClick={themeToggle}>

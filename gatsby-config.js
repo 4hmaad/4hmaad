@@ -5,6 +5,19 @@
  */
 
 module.exports = {
-  /* Your site config here */
-  plugins: [],
+  siteMetadata: {
+    title: "Ahmad Nawaz Khan | Web Developer",
+    description: 'Web developer"',
+    author: "Ahmad Nawaz Khan",
+  },
+  plugins: [
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /\.react\.svg$/,
+        },
+      },
+    },
+  ],
 }

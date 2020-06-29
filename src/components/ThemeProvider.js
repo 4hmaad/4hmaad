@@ -1,19 +1,15 @@
 import React from "react"
 import { ThemeProvider as StyledProvider } from "styled-components"
-import useEffectThemeMode from "./../hooks/useEffectThemeMode"
-import { lightTheme, darkTheme } from "./styles/themes"
+import useEffectThemeMode from "../hooks/useEffectThemeMode"
+import { lightTheme, darkTheme } from "../styles/themes"
 
-const defaultContextData = {
-  theme: "dark",
-  toggleTheme: () => {},
-}
+const defaultContextData = ["dark", () => {}]
 
 const ThemeContext = React.createContext(defaultContextData)
 
-// To avoid ThemeContext.Consumer
-const useTheme = React.useContext(ThemeContext)
+const ThemeProvider = props => {
+  console.log(props)
 
-const ThemeProvider = ({ children }) => {
   const [themeState, toggleTheme] = useEffectThemeMode()
 
   if (!themeState.hasComponentMounted) {
@@ -35,12 +31,11 @@ const ThemeProvider = ({ children }) => {
 
   return (
     <StyledProvider theme={theme}>
-      <ThemeContext.Provider value={(themeState, toggleTheme)}>
-        {children}
+      <ThemeContext.Provider value={[themeState.theme, toggleTheme]}>
+        {props?.children}
       </ThemeContext.Provider>
     </StyledProvider>
   )
 }
 
-export { useTheme }
-export default ThemeProvider
+export { ThemeProvider as default, ThemeContext }

@@ -4,7 +4,7 @@ export default createGlobalStyle`
 
 :root {
   --font-bold: 800;
-  --font-regular: 500;
+  --font-regular: 400;
   --font--medium: 500;
 
   --font-xs: 1.4rem; /* Used for P and A */
@@ -22,6 +22,11 @@ export default createGlobalStyle`
  --section-padding: 15rem 0rem;
  --section-header-margin: 2rem 0rem 4rem 0rem;
  --container-max-width: 120rem;
+
+
+
+ /* Breakpoints */
+
 }
 
 *,
@@ -35,6 +40,20 @@ export default createGlobalStyle`
 
 html {
     font-size: 62.5%;
+
+
+    @media (max-width: 75em) {
+        font-size: 56;
+    }
+
+    @media (max-width: 56.25em) {
+        font-size: 50%;
+    }
+
+    @media (max-width: 37.5em) {
+        font-size:44%
+    }
+
 }
 
 body {
@@ -45,7 +64,7 @@ body {
     color: ${props => props.theme.text};
     transition: background 0ms ease-in-out, color 500ms ease-in-out;
     box-sizing: border-box;
-    line-height: 1.6;
+    line-height: var(--line-height);
 }
 
 h1,
@@ -54,7 +73,7 @@ h3,
 h4 {
     font-family: var(--font-heading);
     font-weight: var(--font-bold);
-    ${props => props.theme.header};
+    color: ${props => props.theme.header};
 }
 
 li, p ,a {

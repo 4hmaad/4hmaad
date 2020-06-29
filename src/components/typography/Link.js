@@ -13,6 +13,7 @@ const A = styled.a`
   font-size: ${linkSizes.normal}rem;
   font-size: ${props => props.size && `${linkSizes[props.size]}rem`};
   max-width: max-content;
+  text-decoration: none;
 
   position: relative;
   --scaleX: 1;
@@ -21,12 +22,12 @@ const A = styled.a`
 
   &::before {
     content: "";
-    height: 0.5rem;
+    height: 0.4rem;
     position: absolute;
     background: ${props => props.theme.linkBorder};
     content: "";
     width: 100%;
-    bottom: -4px;
+    bottom: -3px;
     z-index: -1;
     border-radius: 12px;
     transition: transform 0.1s;

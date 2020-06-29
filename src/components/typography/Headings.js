@@ -12,9 +12,8 @@ const headingSizes = {
 
 const H = styled.h1`
   font-size: ${headingSizes.h1}rem;
-  ${props => props.as && `${headingSizes[props.as]}`};
+  font-size: ${props => props.as && `${headingSizes[props.as]}rem`};
   color: ${props => props.theme.heading};
-  font-weight: ${props => props.theme.fontWeight};
 `
 
 export default H

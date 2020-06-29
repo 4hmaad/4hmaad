@@ -33,16 +33,18 @@ const ButtonStyles = styled.a`
   outline: none;
   cursor: pointer;
   transition: all 0.4s ease;
+  text-decoration: none;
 
   ${props => (props.secondary ? secondaryButtonStyles : primaryButtonStyles)}
 
   ${props =>
     props.small
-      ? `padding: 1rem 1.8rem;
-       font-size: ${props.theme.fontSM}`
+      ? `padding: 1rem 2.2rem;
+       font-size: var(--font-sm);`
       : `padding: 1.4rem 2.5rem;
-       font-size: ${props.theme.fontMD}`}
+       font-size: var(--font-md);`}
 `
+
 const CustomButton = ({ children, ...props }) => (
   <ButtonStyles {...props}> {children} </ButtonStyles>
 )

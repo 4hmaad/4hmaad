@@ -12,6 +12,8 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
@@ -24,6 +26,25 @@ module.exports = {
       resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [".mdx", ".md"],
+      },
+      gatsbyRemarkPlugins: [
+        {
+          resolve: `gatsby-remark-images`,
+          options: {},
+        },
+      ],
+      plugins: [
+        {
+          resolve: `gatsby-remark-images`,
+          options: {},
+        },
+      ],
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/src/assets/images/`,
       },
     },
     {

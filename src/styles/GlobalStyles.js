@@ -70,10 +70,13 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
     font-family: var(--font-heading);
     font-weight: var(--font-bold);
     color: ${props => props.theme.header};
+    line-height: 1.5;
+    margin: 2rem 0rem;
 }
 
 li, p ,a {

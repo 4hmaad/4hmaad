@@ -22,9 +22,9 @@ const Hero = () => (
     <HeroStyles>
       <H>Hey, I am Ahmad, a Full-Stack Web Developer.</H>
       <P size="large">
-        A young enthusiastic programmer with over two years of experience in
-        softwares development, I build exceptional, high-quality, performant and
-        secure websites and applications.
+        A young enthusiastic programmer with over two years of experience, I
+        create exceptional, high-quality, performant and secure websites and
+        applications. Get in touch to discuss how we can work together.
       </P>
 
       <ButtonsContainer>

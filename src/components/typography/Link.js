@@ -2,22 +2,24 @@ import styled from "styled-components"
 
 const linkSizes = {
   // rem
+
+  a: 2,
   small: 1.4,
-  normal: 1.8,
+  medium: 1.8,
   large: 2,
 }
 
 const A = styled.a`
   color: ${props => props.theme.link};
   font-weight: var(--font-medium);
-  font-size: ${linkSizes.normal}rem;
+  font-size: ${linkSizes.a}rem;
   font-size: ${props => props.size && `${linkSizes[props.size]}rem`};
   max-width: max-content;
   text-decoration: none;
 
   position: relative;
   --scaleX: 1;
-  --rotate: -2deg;
+  --rotate: -1deg;
   cursor: pointer;
 
   &::before {
@@ -31,7 +33,7 @@ const A = styled.a`
     z-index: -1;
     border-radius: 12px;
     transition: transform 0.1s;
-    transform: skew(-20deg) rotate(var(--rotate)) scaleX(var(--scaleX));
+    transform: skew(0deg) rotate(var(--rotate)) scaleX(var(--scaleX));
   }
 
   &:hover {

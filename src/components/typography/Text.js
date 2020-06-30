@@ -2,9 +2,11 @@ import styled from "styled-components"
 
 const textSizes = {
   // rem
-  p: 1.8,
-  span: 1.8,
+  p: 2,
+  span: 2,
+
   small: 1.4,
+  medium: 1.8,
   large: 2,
 }
 

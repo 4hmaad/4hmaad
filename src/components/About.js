@@ -15,6 +15,7 @@ const SkillsFilters = styled.ul`
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 3rem;
+  user-select: none;
 
   & > li:first-child {
     font-weight: var(--font-medium);
@@ -58,7 +59,7 @@ const SkillsUl = styled.ul`
 `
 
 const skillsData = {
-  technologies: [
+  Technologies: [
     "Javascript (ES6+)",
     "PHP",
     "GraphQL",
@@ -67,11 +68,9 @@ const skillsData = {
     "SCSS",
     "HTML5",
   ],
-  databases: ["MySQL", "Firebase", "MongoDB"],
-  frameworks: ["React.js", "Gatsby.js", "Bootstrap (CSS)"],
+  Databases: ["MySQL", "Firebase", "MongoDB"],
+  Frameworks: ["React.js", "Gatsby.js", "Bootstrap (CSS)"],
 }
-
-const filters = ["Technologies", "Databases", "Frameworks"]
 
 const About = () => {
   const [currentFilter, setFilter] = useState(null)
@@ -87,7 +86,7 @@ const About = () => {
   }
 
   const onFilterClick = e => {
-    const newFilter = e.target.innerText.toLowerCase()
+    const newFilter = e.target.innerText.trim()
     if (currentFilter === newFilter) {
       setFilter(null)
       return
@@ -128,12 +127,8 @@ const About = () => {
 
         <SkillsFilters>
           <li>Filters:</li>
-          {filters.map(filter => (
-            <li
-              className={
-                currentFilter === filter.toLowerCase() && "active-filter"
-              }
-            >
+          {Object.keys(skillsData).map(filter => (
+            <li className={currentFilter === filter && "active-filter"}>
               <A onClick={onFilterClick}>{filter}</A>
             </li>
           ))}

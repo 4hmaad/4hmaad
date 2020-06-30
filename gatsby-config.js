@@ -61,5 +61,20 @@ module.exports = {
         path: `${__dirname}/src/data/projects`,
       },
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Raleway`,
+            variants: ["400", "500"],
+          },
+          {
+            family: `Open Sans`,
+            variants: [`800`],
+          },
+        ],
+      },
+    },
   ],
 }

@@ -27,6 +27,7 @@ const secondaryButtonStyles = css`
 `
 
 const ButtonStyles = styled.a`
+  display: inline-block;
   border: 2px solid #000;
   text-transform: uppercase;
   border-radius: 4px;
@@ -39,9 +40,9 @@ const ButtonStyles = styled.a`
 
   ${props =>
     props.small
-      ? `padding: 1rem 2.2rem;
+      ? `padding: 0.8rem 2.2rem;
        font-size: var(--font-sm);`
-      : `padding: 1.4rem 2.5rem;
+      : `padding: 1.2rem 2.5rem;
        font-size: var(--font-md);`}
 `
 

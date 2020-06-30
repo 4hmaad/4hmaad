@@ -2,8 +2,6 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import { A, H, P } from "../typography"
 
-import { ArrowIcon } from "../icons"
-
 const AboutStyles = styled.section`
   padding: var(--section-padding);
 `
@@ -51,7 +49,7 @@ const SkillsUl = styled.ul`
 
   & > li::before {
     content: "";
-    background-image: url(${ArrowIcon});
+    background-image: url(arrow.svg);
     background-repeat: no-repeat;
     background-position: center;
     height: 4rem;
@@ -78,12 +76,14 @@ const About = () => {
 
   const renderSkills = () => {
     if (currentFilter && currentFilter in skillsData) {
-      return skillsData[currentFilter].map(skill => <li>{skill}</li>)
+      return skillsData[currentFilter].map((skill, idx) => (
+        <li key={idx}>{skill}</li>
+      ))
     }
 
     return Object.values(skillsData)
       .flat()
-      .map(skill => <li>{skill}</li>)
+      .map((skill, idx) => <li key={idx}>{skill}</li>)
   }
 
   const onFilterClick = e => {
@@ -128,8 +128,11 @@ const About = () => {
 
         <SkillsFilters>
           <li>Filters:</li>
-          {Object.keys(skillsData).map(filter => (
-            <li className={currentFilter === filter && "active-filter"}>
+          {Object.keys(skillsData).map((filter, idx) => (
+            <li
+              key={idx}
+              className={currentFilter === filter ? "active-filter" : ""}
+            >
               <A onClick={onFilterClick}>{filter}</A>
             </li>
           ))}

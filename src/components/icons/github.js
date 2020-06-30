@@ -1,7 +1,8 @@
 import React from "react"
 
-const GithubIcon = () => (
+const GithubIcon = ({ className }) => (
   <svg
+    className={className}
     xmlns="http://www.w3.org/2000/svg"
     role="img"
     viewBox="0 0 438.549 438.549"

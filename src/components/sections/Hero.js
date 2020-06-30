@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { H, P } from "./typography"
+import { H, P } from "../typography"
 
-import CustomButton from "./CustomButton"
+import CustomButton from "../CustomButton"
 
 const HeroStyles = styled.header`
   padding-top: 16rem;

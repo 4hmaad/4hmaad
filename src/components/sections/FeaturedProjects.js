@@ -3,13 +3,17 @@ import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 
 /* components */
-import Project from "./Project"
+import Project from "../Project"
 
 /* Typography */
-import H from "./typography/Headings"
+import H from "../typography/Headings"
 
 const ProjectsStyles = styled.section`
   padding: var(--section-padding);
+
+  & > div:last-child {
+    margin: 0;
+  }
 `
 
 export const FeaturedProjects = () => {

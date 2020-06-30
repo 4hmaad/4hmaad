@@ -1,7 +1,8 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import { A, H, P } from "./typography"
-import ArrowIcon from "./../../static/arrow.svg"
+import { A, H, P } from "../typography"
+
+import { ArrowIcon } from "../icons"
 
 const AboutStyles = styled.section`
   padding: var(--section-padding);

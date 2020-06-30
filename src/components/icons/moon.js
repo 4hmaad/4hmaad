@@ -1,28 +1,18 @@
 import React from "react"
 
-const MoonIcon = () => (
+const MoonIcon = ({ className }) => (
   <svg
+    className={className}
     width="35px"
     height="35px"
     viewBox="0 0 35 35"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
   >
     <title>moon</title>
     <defs></defs>
-    <g
-      id="Vivid.JS"
-      stroke="none"
-      stroke-width="1"
-      fill="none"
-      fill-rule="evenodd"
-    >
-      <g
-        id="Vivid-Icons"
-        transform="translate(-200.000000, -332.000000)"
-        fill="#FF6E6E"
-      >
+    <g stroke="none" strokeWidth="1" fill="none">
+      <g transform="translate(-200.000000, -332.000000)" fill="#000000">
         <g id="Icons" transform="translate(37.000000, 169.000000)">
           <g id="moon" transform="translate(156.000000, 156.000000)">
             <g transform="translate(7.000000, 7.000000)" id="Shape">
@@ -35,4 +25,4 @@ const MoonIcon = () => (
   </svg>
 )
 
-export default Moon
+export default MoonIcon

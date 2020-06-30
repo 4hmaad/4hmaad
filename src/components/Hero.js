@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import H from "./typography/Headings"
-import P from "./typography/Text"
+import { H, P } from "./typography"
 
 import CustomButton from "./CustomButton"
 
@@ -11,25 +10,39 @@ const HeroStyles = styled.header`
   display: flex;
   flex-direction: column;
   max-width: 80rem;
+
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    margin: 1rem 0rem;
+  }
 `
 
 const ButtonsContainer = styled.div`
-  padding-top: 5rem;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: flex-start;
 `
 
 const Hero = () => (
   <>
     <HeroStyles>
       <H>Hey, I am Ahmad, a Full-Stack Web Developer.</H>
-      <P size="large">
-        A young enthusiastic programmer with over two years of experience, I
+      <P>
+        A young enthusiastic programmer with almost two years of experience, I
         create exceptional, high-quality, performant and secure websites and
         applications. Get in touch to discuss how we can work together.
       </P>
 
       <ButtonsContainer>
-        <CustomButton style={{ marginRight: "2rem" }}>projects</CustomButton>
-        <CustomButton secondary>contact</CustomButton>
+        <CustomButton href="#" style={{ marginRight: "2rem" }}>
+          projects
+        </CustomButton>
+        <CustomButton href="#" secondary>
+          contact
+        </CustomButton>
       </ButtonsContainer>
     </HeroStyles>
   </>

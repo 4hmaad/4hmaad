@@ -6,9 +6,7 @@ import Img from "gatsby-image"
 import CustomButton from "./CustomButton"
 
 /* typography */
-import H from "./typography/Headings"
-import P from "./typography/Text"
-import A from "./typography/Link"
+import { H, P, A } from "./typography"
 
 const ProjectStyles = styled.div`
   display: grid;
@@ -70,7 +68,9 @@ const Project = props => {
           <CustomButton small href={site}>
             Visit Site
           </CustomButton>
-          <A href={repo}>Source Code</A>
+          <A size="medium" href={repo}>
+            Source Code
+          </A>
         </ProjectLinksContainer>
       </div>
 

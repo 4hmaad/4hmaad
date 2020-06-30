@@ -5,7 +5,7 @@ export default createGlobalStyle`
 :root {
   --font-bold: 800;
   --font-regular: 400;
-  --font--medium: 500;
+  --font-medium: 500;
 
   --font-xs: 1.4rem; /* Used for P and A */
   --font-sm: 1.8rem;  /* Used for H5,P and A */
@@ -62,7 +62,7 @@ body {
     font-weight: var(--font-regular);
     background: ${props => props.theme.body};
     color: ${props => props.theme.text};
-    transition: background 0ms ease-in-out, color 500ms ease-in-out;
+    transition: background 500ms ease-in-out, color 0ms ease-in-out;
     box-sizing: border-box;
     line-height: var(--line-height);
 }
@@ -76,12 +76,29 @@ h5 {
     font-weight: var(--font-bold);
     color: ${props => props.theme.header};
     line-height: 1.5;
-    margin: 2rem 0rem;
 }
 
-li, p ,a {
-    font-family: inherit;
+h1,
+h2 {
+    margin: 2.5rem 0;
+}
+
+h3 {
+    margin: 1.8rem 0;
+}
+h4,
+h5 {
+    margin: 1.5rem 0;
+}
+
+
+li, p {
+    display:block;
     font-weight: var(--font-regular);
+}
+
+p {
+    margin: 2rem 0rem;
 }
 
 a {

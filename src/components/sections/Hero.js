@@ -1,5 +1,7 @@
 import React from "react"
 import styled from "styled-components"
+import { Link as ScrollLink } from "react-scroll"
+
 import { H, P } from "../typography"
 
 import CustomButton from "../CustomButton"
@@ -37,10 +39,23 @@ const Hero = () => (
       </P>
 
       <ButtonsContainer>
-        <CustomButton href="#" style={{ marginRight: "2rem" }}>
+        <CustomButton
+          as={ScrollLink}
+          to="projects"
+          smooth={true}
+          offset={100}
+          duration={1500}
+          style={{ marginRight: "2rem" }}
+        >
           projects
         </CustomButton>
-        <CustomButton href="#" secondary>
+        <CustomButton
+          as={ScrollLink}
+          to="contact"
+          smooth={true}
+          duration={1500}
+          secondary
+        >
           contact
         </CustomButton>
       </ButtonsContainer>

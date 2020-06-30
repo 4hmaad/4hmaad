@@ -96,7 +96,7 @@ const About = () => {
   }
 
   return (
-    <AboutStyles>
+    <AboutStyles id="about">
       <H>About Me</H>
 
       <H as="h4"> A Full-Stack Web Developer</H>

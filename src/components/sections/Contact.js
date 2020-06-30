@@ -9,7 +9,7 @@ const ContactStyles = styled.section`
 `
 
 const Contact = () => (
-  <ContactStyles>
+  <ContactStyles id="contact">
     <H>Get In Touch</H>
 
     <P>

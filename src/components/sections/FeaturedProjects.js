@@ -51,7 +51,7 @@ export const FeaturedProjects = () => {
   `)
 
   return (
-    <ProjectsStyles>
+    <ProjectsStyles id="projects">
       <H>Selected Projects</H>
 
       {projects.map(({ frontmatter }, idx) => (

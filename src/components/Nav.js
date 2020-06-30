@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import { Link as ScrollLink } from "react-scroll"
 import { ThemeContext } from "./ThemeProvider"
 
-import LogoIcon from "./../../static/logo.react.svg"
-import SunIcon from "./../../static/sun.react.svg"
+import { LogoIcon, SunIcon, MoonIcon } from "./icons"
 
 const NavStyles = styled.div`
   height: 9rem;
@@ -31,7 +31,12 @@ const Logo = styled(LogoIcon)`
   }
 `
 
-const NavUi = styled.ul`
+const ThemeIcon = styled.svg`
+  width: 2.5rem;
+  height: 2.5rem;
+`
+
+const NavUl = styled.ul`
   list-style-type: none;
   display: flex;
   align-items: center;
@@ -42,6 +47,7 @@ const NavUi = styled.ul`
 const NavLi = styled.li`
   margin: 1rem 2rem;
   text-transform: uppercase;
+  cursor: pointer;
 
   & > a {
     color: ${props => props.theme.link};
@@ -63,32 +69,43 @@ const ThemeToggler = styled.div`
 `
 
 const Nav = () => {
-  const [, themeToggle] = React.useContext(ThemeContext)
+  const [currentTheme, themeToggle] = React.useContext(ThemeContext)
   return (
     <NavStyles>
       <Link to="/">
         <Logo />
       </Link>
 
-      <NavUi>
+      <NavUl>
         <NavLi>
-          <a href="/#">About</a>
+          <ScrollLink
+            offset={100}
+            duration={1500}
+            spy={true}
+            smooth={true}
+            to="about"
+          >
+            About
+          </ScrollLink>
         </NavLi>
         <NavLi>
-          <a href="/#">Services</a>
+          <ScrollLink smooth={true} duration={1500} offset={100} to="services">
+            Services
+          </ScrollLink>
         </NavLi>
         <NavLi>
           <Link to="/blog">Blog</Link>
         </NavLi>
         <NavLi>
-          <Link to="/blog">Contact</Link>
-        </NavLi>
-        <NavLi>
           <ThemeToggler onClick={themeToggle}>
-            <SunIcon />
+            {currentTheme === "dark" ? (
+              <ThemeIcon as={SunIcon} />
+            ) : (
+              <ThemeIcon as={MoonIcon} />
+            )}
           </ThemeToggler>
         </NavLi>
-      </NavUi>
+      </NavUl>
     </NavStyles>
   )
 }

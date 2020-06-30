@@ -1,8 +1,10 @@
 import React from "react"
 import Layout from "./../components/Layout"
-import Hero from "./../components/Hero"
-import About from "./../components/About"
-import FeaturedProjects from "./../components/FeaturedProjects"
+import Hero from "./../components/sections/Hero"
+import About from "./../components/sections/About"
+import FeaturedProjects from "./../components/sections/FeaturedProjects"
+import Contact from "./../components/sections/Contact"
+import Footer from "./../components/Footer"
 
 export default function Home() {
   return (
@@ -10,6 +12,8 @@ export default function Home() {
       <Hero />
       <FeaturedProjects />
       <About />
+      <Contact />
+      <Footer />
     </Layout>
   )
 }

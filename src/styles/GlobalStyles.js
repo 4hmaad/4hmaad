@@ -62,7 +62,7 @@ body {
     font-weight: var(--font-regular);
     background: ${props => props.theme.body};
     color: ${props => props.theme.text};
-    transition: background 500ms ease-in-out, color 0ms ease-in-out;
+    transition: background 0ms ease-in-out, color 0ms ease-in-out;
     box-sizing: border-box;
     line-height: var(--line-height);
 }

@@ -3,12 +3,11 @@ import styled from "styled-components"
 import ThemeProvider from "./ThemeProvider"
 import GlobalStyles from "../styles/GlobalStyles"
 import Head from "./Head"
-import Nav from "./Nav"
 
-const ContentContainer = styled.div`
+const PageContainer = styled.div`
   max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0rem 2rem;
+  padding: 0 2rem;
 `
 
 const Layout = ({ children }) => {
@@ -16,8 +15,7 @@ const Layout = ({ children }) => {
     <ThemeProvider>
       <Head />
       <GlobalStyles />
-      <Nav />
-      <ContentContainer>{children}</ContentContainer>
+      <PageContainer>{children}</PageContainer>
     </ThemeProvider>
   )
 }

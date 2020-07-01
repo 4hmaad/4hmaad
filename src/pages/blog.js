@@ -20,24 +20,23 @@ const SearchInput = styled.input`
 const BlogStyles = styled.div`
   margin-top: 6rem;
   display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-gap: 2rem;
+  grid-template-columns: 25% 1fr;
+  grid-gap: 3rem;
 
   .sidebar {
     ul {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       flex-wrap: wrap;
-      justify-items: space-between;
 
       li {
         font-size: var(--font-xs);
         font-weight: var(--font-medium);
         border-radius: 2px;
-        background: ${props => props.theme.yellow};
-        color: ${props => props.theme.dark};
+        background: ${props => props.theme.dark};
+        color: ${props => props.theme.light};
         padding: 0.2rem 1rem;
-        margin-bottom: 1rem;
+        margin: 0.5rem 0.3rem;
         cursor: pointer;
       }
     }
@@ -78,7 +77,7 @@ export default ({ data }) => {
 
         <div>
           {posts.map(post => (
-            <BlogPostPreview post={post} />
+            <BlogPostPreview key={post.id} post={post} />
           ))}
         </div>
       </BlogStyles>

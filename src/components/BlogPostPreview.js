@@ -16,27 +16,17 @@ const PostPreviewStyles = styled.article`
       : null}
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.06), 0px 2px 4px rgba(0, 0, 0, 0.06);
 
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
-
-  &:hover {
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.06), 0px 2px 4px rgba(0, 0, 0, 0.06);
+  .title {
+    margin: 0;
   }
-
-  & > div:last-child {
-    .title {
-      margin: 0;
-      text-decoration: underline;
-      text-decoration-color: ${props => props.theme.yellow};
-    }
-    .link {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      text-decoration: none;
-      cursor: pointer;
-    }
+  .link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    cursor: pointer;
   }
 
   @media (max-width: 56.25em) {
@@ -50,16 +40,14 @@ const PostPreviewStyles = styled.article`
 
 const BlogPostPreview = ({ post }) => (
   <PostPreviewStyles key={post.id}>
-    <div>
-      <P as="span" size="small">
-        {post.frontmatter.date}
-      </P>
-      <H className="title" as="h3">
-        {post.frontmatter.title}
-      </H>
-      <P>{post.excerpt}</P>
-      <Link className="link" to={post.fields.slug} />
-    </div>
+    <P as="span" size="small">
+      {post.frontmatter.date}
+    </P>
+    <H className="title" as="h3">
+      {post.frontmatter.title}
+    </H>
+    <P>{post.excerpt}</P>
+    <Link className="link" to={post.fields.slug} />
   </PostPreviewStyles>
 )
 

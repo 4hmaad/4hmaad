@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 
 /* components */
-import CustomButton from "./CustomButton"
+import Button from "./../styles/Button"
 
 /* typography */
 import { H, P, A } from "./typography"
@@ -65,9 +65,9 @@ const Project = props => {
         </ListUi>
 
         <ProjectLinksContainer>
-          <CustomButton small href={site}>
+          <Button small primary href={site}>
             Visit Site
-          </CustomButton>
+          </Button>
           <A size="medium" href={repo}>
             Source Code
           </A>

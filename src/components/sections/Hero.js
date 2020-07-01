@@ -4,7 +4,7 @@ import { Link as ScrollLink } from "react-scroll"
 
 import { H, P } from "../typography"
 
-import CustomButton from "../CustomButton"
+import Button from "../../styles/Button"
 
 const HeroStyles = styled.header`
   padding-top: 16rem;
@@ -39,25 +39,29 @@ const Hero = () => (
       </P>
 
       <ButtonsContainer>
-        <CustomButton
+        <Button
           as={ScrollLink}
           to="projects"
           smooth={true}
           offset={100}
           duration={1500}
           style={{ marginRight: "2rem" }}
+          primary
+          large
         >
           projects
-        </CustomButton>
-        <CustomButton
+        </Button>
+        <Button
           as={ScrollLink}
           to="contact"
           smooth={true}
           duration={1500}
-          secondary
+          primary
+          inverted
+          large
         >
           contact
-        </CustomButton>
+        </Button>
       </ButtonsContainer>
     </HeroStyles>
   </>

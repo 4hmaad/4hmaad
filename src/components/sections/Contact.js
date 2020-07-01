@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { H, P } from "../typography"
-import CustomButton from "../CustomButton"
+import Button from "../../styles/Button"
 
 const ContactStyles = styled.section`
   padding: var(--section-padding);
@@ -18,9 +18,9 @@ const Contact = () => (
       to contact. I will try to reply as soon as possible.
     </P>
 
-    <CustomButton small secondary href="mailto: ahmadnawazkhan1@outlook.com">
+    <Button small primary inverted href="mailto: ahmadnawazkhan1@outlook.com">
       Contact
-    </CustomButton>
+    </Button>
   </ContactStyles>
 )
 

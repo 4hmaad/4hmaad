@@ -8,6 +8,8 @@ const dark = "#000000"
 const yellow = "#FFC703"
 
 export const lightTheme = {
+  mainColor: yellow,
+
   body: light,
 
   header: dark,
@@ -31,12 +33,21 @@ export const lightTheme = {
     textHover: light,
   },
 
+  btnMain: {
+    bg: yellow,
+    text: dark,
+    bgHover: yellow,
+    textHover: dark,
+  },
+
   yellow,
   light,
   dark,
 }
 
 export const darkTheme = {
+  mainColor: yellow,
+
   body: denim,
 
   header: light,
@@ -58,6 +69,13 @@ export const darkTheme = {
     text: light,
     bgHover: light,
     textHover: denim,
+  },
+
+  btnMain: {
+    bg: yellow,
+    text: dark,
+    bgHover: yellow,
+    textHover: dark,
   },
 
   yellow,

@@ -4,31 +4,26 @@ import { Link } from "gatsby"
 import { Link as ScrollLink } from "react-scroll"
 import { ThemeContext } from "./ThemeProvider"
 
-import { LogoIcon, SunIcon, MoonIcon } from "./icons"
+import { SunIcon, MoonIcon } from "./icons"
 
 const NavStyles = styled.div`
   height: 9rem;
   background: transparent;
   display: flex;
-  padding: 2rem;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 4px solid ${props => props.theme.yellow};
 
   svg {
     display: block;
   }
 `
 
-const Logo = styled(LogoIcon)`
-  height: 4rem;
-  width: 4rem;
-  background: transparent;
-
-  & > path {
-    stroke: ${props => props.theme.text} !important;
-    stroke-width: 3rem;
-  }
+const LogoText = styled(Link)`
+  color: ${props => props.theme.text};
+  font-weight: var(--font-medium);
+  font-family: var(--font-text);
+  text-decoration: none;
+  font-size: 2.5rem;
 `
 
 const ThemeIcon = styled.svg`
@@ -41,7 +36,8 @@ const NavUl = styled.ul`
   display: flex;
   align-items: center;
   font-size: var(--font-md);
-  font-family: var(--font-heading);
+  font-family: var(--font-text);
+  font-weight: var(--font-medium);
 `
 
 const NavLi = styled.li`
@@ -68,34 +64,44 @@ const ThemeToggler = styled.div`
   }
 `
 
-const Nav = () => {
+const Nav = ({ showLinks = false }) => {
   const [currentTheme, themeToggle] = React.useContext(ThemeContext)
   return (
     <NavStyles>
-      <Link to="/">
-        <Logo />
-      </Link>
+      <LogoText to="/">
+        <span>Ahmad Nawaz</span>
+      </LogoText>
 
       <NavUl>
-        <NavLi>
-          <ScrollLink
-            offset={100}
-            duration={1500}
-            spy={true}
-            smooth={true}
-            to="about"
-          >
-            About
-          </ScrollLink>
-        </NavLi>
-        <NavLi>
-          <ScrollLink smooth={true} duration={1500} offset={100} to="services">
-            Services
-          </ScrollLink>
-        </NavLi>
-        <NavLi>
-          <Link to="/blog">Blog</Link>
-        </NavLi>
+        {showLinks ? (
+          <>
+            <NavLi>
+              <ScrollLink
+                offset={100}
+                duration={1500}
+                spy={true}
+                smooth={true}
+                to="about"
+              >
+                About
+              </ScrollLink>
+            </NavLi>
+            <NavLi>
+              <ScrollLink
+                smooth={true}
+                duration={1500}
+                offset={100}
+                to="services"
+              >
+                Services
+              </ScrollLink>
+            </NavLi>
+            <NavLi>
+              <Link to="/blog">Blog</Link>
+            </NavLi>
+          </>
+        ) : null}
+
         <NavLi>
           <ThemeToggler onClick={themeToggle}>
             {currentTheme === "dark" ? (

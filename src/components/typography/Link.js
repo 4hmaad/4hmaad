@@ -15,29 +15,30 @@ const A = styled.a`
   font-size: ${linkSizes.a}rem;
   font-size: ${props => props.size && `${linkSizes[props.size]}rem`};
   max-width: max-content;
+  transition: color 0.1s ease-in-out;
   text-decoration: none;
 
   position: relative;
-  --scaleX: 1;
-  --rotate: -1deg;
   cursor: pointer;
 
-  &::before {
+  &::after {
     content: "";
-    height: 0.4rem;
     position: absolute;
-    background: ${props => props.theme.linkBorder};
-    content: "";
-    width: 100%;
-    bottom: -3px;
     z-index: -1;
-    border-radius: 12px;
-    transition: transform 0.1s;
-    transform: skew(0deg) rotate(var(--rotate)) scaleX(var(--scaleX));
+    top: 90%;
+    left: -0.1px;
+    right: -0.1px;
+    bottom: -2px;
+    transition: all 0.1s ease-in-out;
+    background-color: ${props => props.theme.mainColor};
+  }
+
+  &:hover::after {
+    top: 0;
   }
 
   &:hover {
-    --scaleX: 1.05;
+    color: ${props => props.theme.dark};
   }
 `
 

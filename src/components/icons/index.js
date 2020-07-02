@@ -2,5 +2,6 @@ import MoonIcon from "./moon"
 import SunIcon from "./sun"
 import GithubIcon from "./github"
 import LinkedInIcon from "./linkedin"
+import FacebookIcon from "./facebook"
 
-export { MoonIcon, SunIcon, GithubIcon, LinkedInIcon }
+export { FacebookIcon, MoonIcon, SunIcon, GithubIcon, LinkedInIcon }

@@ -12,7 +12,7 @@ const PrimaryButton = css`
   }
 `
 const PrimaryButtonInverted = css`
-  background: ${props => props.theme.btnSecondary.bg};
+  background: transparent;
   color: ${props => props.theme.btnSecondary.text};
   border: 2px solid ${props => props.theme.btnSecondary.bgHover};
 

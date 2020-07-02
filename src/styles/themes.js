@@ -1,5 +1,6 @@
 /** Colors */
-const denim = "#222639"
+const denim = "#1a202c"
+const denimLight = "#2b2f46"
 
 const light = "#ffffff"
 
@@ -40,6 +41,8 @@ export const lightTheme = {
     textHover: dark,
   },
 
+  denim,
+  denimLight,
   yellow,
   light,
   dark,
@@ -78,6 +81,8 @@ export const darkTheme = {
     textHover: dark,
   },
 
+  denim,
+  denimLight,
   yellow,
   light,
   dark,

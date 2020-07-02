@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Link as ScrollLink } from "react-scroll"
 import styled from "styled-components"
 import { A, H, P } from "../typography"
 
@@ -102,29 +103,39 @@ const About = () => {
       <H as="h4"> A Full-Stack Web Developer</H>
 
       <P>
-        I am passionate about making performant web and mobile apps, I also
+        I create performant and secure apps to make humans life easier, I also
         occasionally write articles on Javascript and other frameworks/tools.
       </P>
 
       <P>
-        I started my coding journey back in 2018 when I first learned C++ in
-        college, I liked how you could tell a computer to do something for you
-        so, I fell in love with it, and since then I have been coding most of
-        time.
+        I started my coding journey back when I first learned C++ in college, I
+        liked how you could tell a computer to do something for you, so, I fell
+        in love with it, and since then I have been coding most of the time.
       </P>
+
       <P>
-        I have almost two years of experience in web development, The
-        technologies I work with are JavaScript, PHP, GraphQL, HTML and CSS with
-        a focus on the frameworks React.js, Gatsby, Next.js, Node and Express.
+        I have over two years of experience, The technologies I work with are
+        JavaScript, PHP, GraphQL, HTML and CSS with a focus on the frameworks
+        React.js, Gatsby, Node and Express.
       </P>
 
       <P>
         I am currently freelancing so if you have any web development needs,
-        feel free to <A href="#contact">contact</A>.
+        feel free to{" "}
+        <A
+          to="contact"
+          as={ScrollLink}
+          smooth={true}
+          offset={100}
+          duration={1500}
+        >
+          contact
+        </A>
+        .
       </P>
 
       <SkillsContainer>
-        <H as="h3">Skills</H>
+        <H as="h4">What I've worked with so far</H>
 
         <SkillsFilters>
           <li>Filters:</li>

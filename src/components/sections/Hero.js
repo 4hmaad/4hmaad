@@ -7,7 +7,7 @@ import { H, P } from "../typography"
 import Button from "../../styles/Button"
 
 const HeroStyles = styled.header`
-  padding-top: 16rem;
+  padding-top: 12rem;
   padding-bottom: 15rem;
   display: flex;
   flex-direction: column;
@@ -26,6 +26,7 @@ const ButtonsContainer = styled.div`
   margin-top: 3rem;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
 `
 
 const Hero = () => (
@@ -33,7 +34,7 @@ const Hero = () => (
     <HeroStyles>
       <H>Hey, I am Ahmad, a Full-Stack Web Developer.</H>
       <P>
-        A young enthusiastic programmer with almost two years of experience, I
+        A young enthusiastic programmer with over two years of experience, I
         create exceptional, high-quality, performant and secure websites and
         applications. Get in touch to discuss how we can work together.
       </P>

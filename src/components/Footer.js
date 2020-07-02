@@ -25,12 +25,21 @@ const FooterStyles = styled.section`
 const Footer = () => (
   <FooterStyles>
     <P size="medium" as="span">
-      Designed and built by <A size="medium">Ahmad (Me)</A>
+      Built by <A size="medium">Ahmad (Me)</A>
     </P>
 
+    <P as="span">© 2020. All rights reserved.</P>
+
     <div>
-      <LinkedInIcon />
-      <GithubIcon />
+      {
+        // TODO: Add the linkedin profile URL
+      }
+      <a href="#">
+        <LinkedInIcon />
+      </a>
+      <a target="_blank" href="https://github.com/4hmaad">
+        <GithubIcon />
+      </a>
     </div>
   </FooterStyles>
 )

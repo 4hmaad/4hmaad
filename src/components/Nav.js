@@ -64,16 +64,26 @@ const ThemeToggler = styled.div`
   }
 `
 
-const Nav = ({ showLinks = false }) => {
+const Nav = ({ forBlog = false }) => {
   const [currentTheme, themeToggle] = React.useContext(ThemeContext)
   return (
     <NavStyles>
-      <LogoText to="/">
-        <span>Ahmad Nawaz</span>
-      </LogoText>
+      {forBlog ? (
+        <LogoText to="/blog">
+          <span>Ahmad Nawaz's Blog</span>
+        </LogoText>
+      ) : (
+        <LogoText to="/">
+          <span>Ahmad Nawaz</span>
+        </LogoText>
+      )}
 
       <NavUl>
-        {showLinks ? (
+        {forBlog ? (
+          <NavLi>
+            <Link to="/">Portfolio</Link>
+          </NavLi>
+        ) : (
           <>
             <NavLi>
               <ScrollLink
@@ -100,7 +110,7 @@ const Nav = ({ showLinks = false }) => {
               <Link to="/blog">Blog</Link>
             </NavLi>
           </>
-        ) : null}
+        )}
 
         <NavLi>
           <ThemeToggler onClick={themeToggle}>

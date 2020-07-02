@@ -6,28 +6,76 @@ import Img from "gatsby-image"
 
 import Layout from "../components/Layout"
 import Nav from "../components/Nav"
-import Button from "../styles/Button"
 
-import { H } from "../components/typography"
+import { H, P, A } from "../components/typography"
 
 const PostContainer = styled.div`
-  max-width: 80rem;
+  max-width: 90rem;
   margin: 6rem auto;
 `
+const PostImage = styled(Img)`
+  border-top: 0.6rem solid ${props => props.theme.mainColor};
+`
+
+const PostFrontMatter = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 4rem 0rem;
+
+  .title {
+    margin: 0;
+  }
+
+  .sub {
+    display: flex;
+
+    .editPost {
+      margin-left: 2rem;
+      text-decoration: none;
+      font-size: var(--font-xs);
+      font-weight: var(--font-regular);
+      color: ${props => props.theme.text};
+      text-decoration: underline;
+      text-decoration-color: ${props => props.theme.text};
+      cursor: pointer;
+    }
+  }
+`
+
+const PostBody = styled.div``
 
 export default ({ data: { mdx: post }, pageContext }) => {
-  console.log(pageContext)
-
   return (
     <Layout>
-      <Nav />
-      <Button as={Link} to="/blog" primary mini>
-        &#8592; Blog
-      </Button>
+      <Nav forBlog />
       <PostContainer>
-        <H>{post.frontmatter.title}</H>
-        <Img fluid={post.frontmatter.cover.childImageSharp.fluid} />
-        <MDXRenderer>{post.body}</MDXRenderer>
+        <>
+          <PostImage fluid={post.frontmatter.cover.childImageSharp.fluid} />
+
+          <PostFrontMatter className="frontmatter">
+            <H className="title" as="h2">
+              {post.frontmatter.title}
+            </H>
+
+            <div className="sub">
+              <P as="span" size="small">
+                {post.frontmatter.date}
+              </P>
+
+              <Link
+                target="_blank"
+                to={`https://github.com/4hmaad/4hmaad/tree/master/src/posts${post.fields.slug}index.mdx`}
+                className="editPost"
+              >
+                Edit Post
+              </Link>
+            </div>
+          </PostFrontMatter>
+
+          <PostBody>
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </PostBody>
+        </>
       </PostContainer>
     </Layout>
   )
@@ -46,14 +94,14 @@ export const query = graphql`
           id
           extension
           childImageSharp {
-            fluid(maxWidth: 700, quality: 20) {
-              base64
-              aspectRatio
-              src
-              srcSet
+            fluid(maxWidth: 700, quality: 80) {
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
+      }
+      fields {
+        slug
       }
     }
   }

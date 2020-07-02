@@ -5,21 +5,24 @@ import { Link } from "gatsby"
 import { H, P } from "./typography"
 
 const PostPreviewStyles = styled.article`
-  margin: 4rem 0;
   border-top: 4px solid ${props => props.theme.yellow};
   padding: 2rem;
   position: relative;
+
+  box-shadow: rgba(46, 41, 51, 0.08) 0px 1px 2px,
+    rgba(71, 63, 79, 0.08) 0px 2px 4px;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 
   ${props =>
     props.theme.text === props.theme.light
       ? `background-color: #2b2f46;`
       : null}
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.06), 0px 2px 4px rgba(0, 0, 0, 0.06);
 
-  .title {
+  & .title {
     margin: 0;
   }
-  .link {
+  & .link {
     position: absolute;
     top: 0;
     left: 0;
@@ -29,12 +32,8 @@ const PostPreviewStyles = styled.article`
     cursor: pointer;
   }
 
-  @media (max-width: 56.25em) {
-    grid-template-columns: 1fr;
-
-    & > div:first-child {
-      grid-row: 1 / 1;
-    }
+  &:hover {
+    transform: translateY(-0.4rem);
   }
 `
 

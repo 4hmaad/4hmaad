@@ -1,8 +1,8 @@
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const path = require(`path`)
 
-async function convertMdxToPosts({ graphql, actions }) {
-  const PostTemplate = path.resolve("./src/templates/PostTemplate")
+async function convertMdxToPosts({ graphql, createPage }) {
+  const PostTemplate = path.resolve("src/templates/PostTemplate.js")
 
   const { errors, data } = await graphql(
     `
@@ -38,8 +38,8 @@ async function convertMdxToPosts({ graphql, actions }) {
     const next = idx === 0 ? null : posts[idx - 1]
 
     createPage({
-      path: post.node.fields.slug,
-      component: blogPost,
+      path: post.fields.slug,
+      component: PostTemplate,
       context: {
         slug: post.fields.slug,
         collection: "post",

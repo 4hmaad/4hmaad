@@ -13,6 +13,13 @@ const NavStyles = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  @media (max-width: 25em) {
+    flex-direction: column;
+    padding-top: 3rem;
+    /* justify-content: center; */
+    align-items: center;
+  }
+
   svg {
     display: block;
   }
@@ -70,11 +77,11 @@ const Nav = ({ forBlog = false }) => {
     <NavStyles>
       {forBlog ? (
         <LogoText to="/blog">
-          <span>Ahmad Nawaz's Blog</span>
+          <span>Ahmad's Blog</span>
         </LogoText>
       ) : (
         <LogoText to="/">
-          <span>Ahmad Nawaz</span>
+          <span>Ahmad.</span>
         </LogoText>
       )}
 

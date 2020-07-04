@@ -1,10 +1,12 @@
 /** Colors */
 const denim = "#1a202c"
-const denimLight = "#2b2f46"
+const denimLight = "#263146"
 
 const light = "#ffffff"
+const light1 = "#dbdbdb"
 
 const dark = "#000000"
+const dark1 = "#2e2e2e"
 
 const yellow = "#FFC703"
 
@@ -12,6 +14,7 @@ export const lightTheme = {
   mainColor: yellow,
 
   body: light,
+  bodySecondary: light1,
 
   header: dark,
   text: dark,
@@ -23,7 +26,7 @@ export const lightTheme = {
   btnPrimary: {
     bg: dark,
     text: light,
-    bgHover: dark,
+    bgHover: dark1,
     textHover: light,
   },
 
@@ -52,6 +55,7 @@ export const darkTheme = {
   mainColor: yellow,
 
   body: denim,
+  bodySecondary: denimLight,
 
   header: light,
   text: light,
@@ -63,7 +67,7 @@ export const darkTheme = {
   btnPrimary: {
     bg: light,
     text: denim,
-    bgHover: light,
+    bgHover: light1,
     textHover: denim,
   },
 

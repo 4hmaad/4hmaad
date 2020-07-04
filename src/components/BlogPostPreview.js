@@ -14,10 +14,9 @@ const PostPreviewStyles = styled.article`
 
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 
-  ${props =>
-    props.theme.text === props.theme.light
-      ? `background-color: #2b2f46;`
-      : null}
+  /* if the theme is dark then background-color should be bodySecondary */
+  background-color: ${props =>
+    props.theme.light === props.theme.text ? props.theme.bodySecondary : ""};
 
   & .title {
     margin: 0;

@@ -6,18 +6,24 @@ import { ThemeContext } from "./ThemeProvider"
 
 import { SunIcon, MoonIcon } from "./icons"
 
-const NavStyles = styled.div`
+const NavStyles = styled.nav`
   height: 9rem;
   background: transparent;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 
-  @media (max-width: 25em) {
-    flex-direction: column;
-    padding-top: 3rem;
-    /* justify-content: center; */
-    align-items: center;
+  ul {
+    margin-left: auto;
+  }
+
+  @media (max-width: 20.875em) {
+    padding: 2rem 0rem;
+
+    ul {
+      margin: 0;
+    }
   }
 
   svg {
@@ -31,6 +37,7 @@ const LogoText = styled(Link)`
   font-family: var(--font-text);
   text-decoration: none;
   font-size: 2.5rem;
+  margin-right: 3rem;
 `
 
 const ThemeIcon = styled.svg`
@@ -49,7 +56,7 @@ const NavUl = styled.ul`
 
 const NavLi = styled.li`
   margin: 1rem 2rem;
-  text-transform: uppercase;
+  text-transform: capitalize;
   cursor: pointer;
 
   & > a {

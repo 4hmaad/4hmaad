@@ -22,7 +22,7 @@ export default createGlobalStyle`
  --section-padding: 15rem 0rem;
  --section-header-margin: 2rem 0rem 4rem 0rem;
  --container-max-width: 120rem;
-
+ --container-blog-post-max-width: 80rem;
 
 
  /* Breakpoints */
@@ -43,15 +43,15 @@ html {
 
 
     @media (max-width: 75em) {
-        font-size: 56;
+        font-size: 54%;
     }
 
     @media (max-width: 56.25em) {
-        font-size: 50%;
+        font-size: 48%;
     }
 
     @media (max-width: 37.5em) {
-        font-size:44%
+        font-size:40%
     }
 
 }
@@ -88,16 +88,12 @@ h3 {
 }
 h4,
 h5 {
-    margin: 1.5rem 0;
-}
-
-
-li, p {
-    display:block;
-    font-weight: var(--font-regular);
+    margin: 1.4rem 0;
 }
 
 p {
+    display:block;
+    font-weight: var(--font-regular);
     margin: 2rem 0rem;
 }
 

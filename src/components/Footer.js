@@ -15,8 +15,8 @@ const FooterStyles = styled.section`
     & svg {
       cursor: pointer;
       margin: 0rem 1rem;
-      height: 2rem;
-      width: 2rem;
+      height: 1.8rem;
+      width: 1.8rem;
       fill: ${props => props.theme.text};
     }
   }
@@ -25,10 +25,12 @@ const FooterStyles = styled.section`
 const Footer = () => (
   <FooterStyles>
     <P size="medium" as="span">
-      Built by <A size="medium">Ahmad (Me)</A>
+      Made by Ahmad (Me)
     </P>
 
-    <P as="span">© 2020. All rights reserved.</P>
+    <P size="medium" as="span">
+      © 2020. All rights reserved.
+    </P>
 
     <div>
       {

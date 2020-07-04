@@ -46,15 +46,15 @@ const SkillsUl = styled.ul`
   & > li {
     display: flex;
     align-items: center;
-  }
 
-  & > li::before {
-    content: "";
-    background-image: url(arrow.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 4rem;
-    width: 4rem;
+    &::before {
+      content: "";
+      background-image: url(arrow.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 4rem;
+      width: 4rem;
+    }
   }
 `
 

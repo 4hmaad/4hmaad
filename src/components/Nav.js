@@ -101,9 +101,9 @@ const Nav = ({ forBlog = false }) => {
                 smooth={true}
                 duration={1500}
                 offset={100}
-                to="services"
+                to="projects"
               >
-                Services
+                Projects
               </ScrollLink>
             </NavLi>
             <NavLi>

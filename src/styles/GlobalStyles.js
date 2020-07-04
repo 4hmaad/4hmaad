@@ -38,6 +38,27 @@ export default createGlobalStyle`
     box-sizing: inherit;
 }
 
+*::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: none;
+	background-color: transparent;
+}
+
+*::-webkit-scrollbar
+{
+	width: 1.2rem;
+	background-color: transparent;
+    height: 1.2rem;
+}
+
+*::-webkit-scrollbar-thumb
+{
+	background-color: ${props => props.theme.bodySecondary};
+    border-radius: 2px;
+}
+
+
+
 html {
     font-size: 62.5%;
 
@@ -78,6 +99,7 @@ h5 {
     line-height: 1.5;
 }
 
+
 h1,
 h2 {
     margin: 2.5rem 0;
@@ -86,6 +108,7 @@ h2 {
 h3 {
     margin: 1.8rem 0;
 }
+
 h4,
 h5 {
     margin: 1.4rem 0;

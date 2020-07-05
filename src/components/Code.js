@@ -9,10 +9,10 @@ const Pre = styled.pre`
   padding: 0.5rem;
   overflow-x: auto;
   border-radius: 3px;
+  font-family: var(--font-code);
   & .token-line {
     line-height: 1.6;
   }
-  font-family: "Fira Code", Courier, monospace;
 `
 const LineNo = styled.span`
   display: inline-block;

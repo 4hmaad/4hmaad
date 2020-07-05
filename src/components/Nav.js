@@ -18,7 +18,7 @@ const NavStyles = styled.nav`
     margin-left: auto;
   }
 
-  @media (max-width: 20.875em) {
+  @media (max-width: 21.875em) {
     padding: 2rem 0rem;
 
     ul {

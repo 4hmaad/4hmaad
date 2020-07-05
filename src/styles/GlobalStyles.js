@@ -16,7 +16,9 @@ export default createGlobalStyle`
 
   --font-text: 'Raleway', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-heading: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
- 
+  --font-code: "Fira Code", 'Consolas', 'Courier New', Courier, monospace;
+
+
  --line-height: 1.7;
 
  --section-padding: 15rem 0rem;
@@ -26,8 +28,8 @@ export default createGlobalStyle`
 
 
  /* Breakpoints */
-
 }
+
 
 *,
 *::after,
@@ -64,15 +66,15 @@ html {
 
 
     @media (max-width: 75em) {
-        font-size: 54%;
+        font-size: 56%;
     }
 
     @media (max-width: 56.25em) {
-        font-size: 48%;
+        font-size: 50%;
     }
 
     @media (max-width: 37.5em) {
-        font-size:40%
+        font-size:42%
     }
 
 }
@@ -123,6 +125,7 @@ p {
 a {
     font-weight: var(--font-medium);
 }
+
 
 section > h1 {
     margin: var(--section-header-margin);

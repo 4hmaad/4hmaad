@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 import { H, P } from "./typography"
 
 const PostPreviewStyles = styled.article`
-  border-top: 4px solid ${props => props.theme.yellow};
+  border-top: 4px solid ${props => props.theme.mainColor};
   padding: 2rem;
   position: relative;
 

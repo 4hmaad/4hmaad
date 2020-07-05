@@ -27,7 +27,7 @@ const SkillsFilters = styled.ul`
   }
 
   & > li.active-filter {
-    background: ${props => props.theme.yellow};
+    background: ${props => props.theme.mainColor};
     border-radius: 4px;
     border: none;
 

@@ -1,14 +1,27 @@
 /** Colors */
+
+// body, card's body etc.
 const denim = "#1a202c"
 const denimLight = "#263146"
 
+// texts, buttons hovers and SVGs
 const light = "#ffffff"
-const light1 = "#dbdbdb"
+const light1 = "#f7f7f7"
+const light2 = "#ededed"
+const light3 = "#dbdbdb"
 
 const dark = "#000000"
-const dark1 = "#2e2e2e"
+const dark1 = "#121212"
+const dark2 = "#1c1c1c"
+const dark3 = "#292929"
 
-const yellow = "#FFC703"
+// usually used for inline-codes
+const blueLight = "#8ed3ff"
+const redLight = "#EB5757"
+const darkGrey = "rgba(135,131,120,0.15)"
+
+// links, links hovers and
+const yellow = "#FFC601"
 
 export const lightTheme = {
   mainColor: yellow,
@@ -23,8 +36,8 @@ export const lightTheme = {
   linkBorder: yellow,
   linkHover: yellow,
 
-  codeColor: "#EB5757",
-  codeBackground: "rgba(135,131,120,0.15)",
+  codeColor: redLight,
+  codeBackground: darkGrey,
 
   btnPrimary: {
     bg: dark,
@@ -47,13 +60,8 @@ export const lightTheme = {
     textHover: dark,
   },
 
-  denim,
-  denimLight,
-  yellow,
   light,
-  light1,
   dark,
-  dark1,
 }
 
 export const darkTheme = {
@@ -69,8 +77,8 @@ export const darkTheme = {
   linkBorder: yellow,
   linkHover: yellow,
 
-  codeColor: "#EB5757",
-  codeBackground: "rgba(135,131,120,0.15)",
+  codeColor: blueLight,
+  codeBackground: darkGrey,
 
   btnPrimary: {
     bg: light,
@@ -93,11 +101,6 @@ export const darkTheme = {
     textHover: dark,
   },
 
-  denim,
-  denimLight,
-  yellow,
-  light,
-  light1,
   dark,
-  dark1,
+  light,
 }

@@ -66,7 +66,7 @@ const NavLi = styled.li`
 
     &:hover,
     &:active {
-      color: ${props => props.theme.yellow};
+      color: ${props => props.theme.linkHover};
     }
   }
 `

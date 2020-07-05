@@ -10,8 +10,9 @@ const Pre = styled.pre`
   overflow-x: auto;
   border-radius: 3px;
   font-family: var(--font-code);
+  font-size: var(--font-md);
   & .token-line {
-    line-height: 1.6;
+    line-height: 1.7;
   }
 `
 const LineNo = styled.span`

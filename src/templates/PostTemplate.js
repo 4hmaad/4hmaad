@@ -6,7 +6,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../components/Layout"
 import Nav from "../components/Nav"
 
-import { H, P, A } from "../components/typography"
+import { H, P } from "../components/typography"
 
 const PostContainer = styled.div`
   max-width: var(--container-blog-post-max-width);

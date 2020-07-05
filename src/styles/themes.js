@@ -23,6 +23,9 @@ export const lightTheme = {
   linkBorder: yellow,
   linkHover: yellow,
 
+  codeColor: "#EB5757",
+  codeBackground: "rgba(135,131,120,0.15)",
+
   btnPrimary: {
     bg: dark,
     text: light,
@@ -48,7 +51,9 @@ export const lightTheme = {
   denimLight,
   yellow,
   light,
+  light1,
   dark,
+  dark1,
 }
 
 export const darkTheme = {
@@ -63,6 +68,9 @@ export const darkTheme = {
   link: light,
   linkBorder: yellow,
   linkHover: yellow,
+
+  codeColor: "#EB5757",
+  codeBackground: "rgba(135,131,120,0.15)",
 
   btnPrimary: {
     bg: light,
@@ -89,5 +97,7 @@ export const darkTheme = {
   denimLight,
   yellow,
   light,
+  light1,
   dark,
+  dark1,
 }

@@ -20,9 +20,10 @@ const A = styled.a`
   );
   background-position: center bottom;
   background-repeat: no-repeat;
-  background-size: auto 2px;
-  transition: color 0.05s ease-out, background-size 0.15s ease-in-out;
+  background-size: auto 0.3rem;
+  transition: color 0.15s ease-out, background-size 0.15s ease-in-out;
   cursor: pointer;
+  padding-bottom: 0.2rem;
 
   &:hover,
   &:focus {

@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { graphql, Link } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import Img from "gatsby-image"
 
 import Layout from "../components/Layout"
 import Nav from "../components/Nav"
@@ -10,11 +9,8 @@ import Nav from "../components/Nav"
 import { H, P, A } from "../components/typography"
 
 const PostContainer = styled.div`
-  max-width: 90rem;
-  margin: 6rem auto;
-`
-const PostImage = styled(Img)`
-  border-top: 0.6rem solid ${props => props.theme.mainColor};
+  max-width: var(--container-blog-post-max-width);
+  margin: 7rem auto;
 `
 
 const PostFrontMatter = styled.div`
@@ -42,7 +38,19 @@ const PostFrontMatter = styled.div`
   }
 `
 
-const PostBody = styled.div``
+const PostBody = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  pre {
+    width: 120%;
+    align-self: center;
+
+    @media (max-width: 56.25em) {
+      width: 100%;
+    }
+  }
+`
 
 export default ({ data: { mdx: post }, pageContext }) => {
   return (
@@ -50,8 +58,6 @@ export default ({ data: { mdx: post }, pageContext }) => {
       <Nav forBlog />
       <PostContainer>
         <>
-          <PostImage fluid={post.frontmatter.cover.childImageSharp.fluid} />
-
           <PostFrontMatter className="frontmatter">
             <H className="title" as="h2">
               {post.frontmatter.title}
@@ -81,28 +87,18 @@ export default ({ data: { mdx: post }, pageContext }) => {
   )
 }
 
-export const query = graphql`
+export const postQuery = graphql`
   query PostBySlug($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       id
-      body
       frontmatter {
         title
         date(formatString: "Do MMMM YYYY")
-        cover {
-          publicURL
-          id
-          extension
-          childImageSharp {
-            fluid(maxWidth: 700, quality: 80) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
-          }
-        }
       }
       fields {
         slug
       }
+      body
     }
   }
 `

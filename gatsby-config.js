@@ -1,9 +1,3 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 module.exports = {
   siteMetadata: {
     title: "Ahmad Nawaz Khan | Web Developer",
@@ -18,17 +12,27 @@ module.exports = {
       resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [".mdx", ".md"],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1035,
+              linkImagesToOriginal: false,
+              withWebp: true,
+              sizeByPixelDensity: true,
+            },
+          },
+        ],
       },
-      gatsbyRemarkPlugins: [
-        {
-          resolve: `gatsby-remark-images`,
-          options: {},
-        },
-      ],
       plugins: [
         {
           resolve: `gatsby-remark-images`,
-          options: {},
+          options: {
+            maxWidth: 1035,
+            linkImagesToOriginal: false,
+            withWebp: true,
+            sizeByPixelDensity: true,
+          },
         },
       ],
     },

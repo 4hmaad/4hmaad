@@ -35,13 +35,13 @@ export default ({ data }) => {
   )
 }
 
-export const query = graphql`
+export const postsQuery = graphql`
   query GET_BLOG_POSTS {
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
         frontmatter: { published: { eq: true } }
-        fileAbsolutePath: { regex: "/posts/" }
+        fields: { collection: { eq: "posts" } }
       }
     ) {
       nodes {
@@ -54,6 +54,7 @@ export const query = graphql`
 
         fields {
           slug
+          collection
         }
       }
     }

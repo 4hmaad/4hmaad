@@ -11,7 +11,7 @@ async function convertMdxToPosts({ graphql, createPage }) {
           sort: { fields: [frontmatter___date], order: DESC }
           filter: {
             frontmatter: { published: { eq: true } }
-            fileAbsolutePath: { regex: "/posts/" }
+            fields: { collection: { eq: "posts" } }
           }
         ) {
           nodes {
@@ -45,7 +45,6 @@ async function convertMdxToPosts({ graphql, createPage }) {
         collection: "post",
         previous,
         next,
-        pathPrefix: "",
       },
     })
   })
@@ -65,6 +64,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       name: `slug`,
       node,
       value: generatedSlug,
+    })
+
+    createNodeField({
+      name: `collection`,
+      node,
+      value: getNode(node.parent).sourceInstanceName,
     })
   }
 }

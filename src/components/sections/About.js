@@ -100,7 +100,7 @@ const About = () => {
     <AboutStyles id="about">
       <H>About Me</H>
 
-      <H as="h4"> A Full-Stack Web Developer</H>
+      <H as="h4">A Web Software Developer</H>
 
       <P>
         I create performant and secure apps to make humans life easier, I also

@@ -4,6 +4,7 @@ import { graphql, Link } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Layout from "../components/Layout"
+import Footer from "../components/Footer"
 import Nav from "../components/Nav"
 
 import { H, P } from "../components/typography"
@@ -83,6 +84,7 @@ export default ({ data: { mdx: post }, pageContext }) => {
           </PostBody>
         </>
       </PostContainer>
+      <Footer />
     </Layout>
   )
 }

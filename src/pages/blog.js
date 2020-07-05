@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 
 import Layout from "./../components/Layout"
 
+import Footer from "../components/Footer"
 import Nav from "./../components/Nav"
 import BlogPostPreview from "./../components/BlogPostPreview"
 
@@ -31,6 +32,7 @@ export default ({ data }) => {
           <BlogPostPreview key={post.id} post={post} />
         ))}
       </BlogStyles>
+      <Footer />
     </Layout>
   )
 }

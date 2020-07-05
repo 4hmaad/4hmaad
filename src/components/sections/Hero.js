@@ -32,7 +32,7 @@ const ButtonsContainer = styled.div`
 const Hero = () => (
   <>
     <HeroStyles>
-      <H>Hey, I am Ahmad, a Full-Stack Web Developer.</H>
+      <H>Hey, I am Ahmad, a Web Software Developer.</H>
       <P>
         A young enthusiastic programmer with over two years of experience, I
         create exceptional, high-quality, performant and secure websites and

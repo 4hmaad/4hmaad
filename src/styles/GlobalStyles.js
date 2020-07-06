@@ -41,7 +41,6 @@ export default createGlobalStyle`
 
 *::-webkit-scrollbar-track
 {
-	-webkit-box-shadow: none;
     box-shadow: none;
 	background-color: transparent;
 }
@@ -74,7 +73,7 @@ html {
     }
 
     @media (max-width: 37.5em) {
-        font-size:42%
+        font-size:48%
     }
 
 }

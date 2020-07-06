@@ -16,10 +16,10 @@ export default createGlobalStyle`
 
   --font-text: 'Raleway', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-heading: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-code: "Fira Code", 'Consolas', 'Courier New', Courier, monospace;
+  --font-code: "Fira Code", "Consolas", 'Courier New', Courier, monospace;
 
 
- --line-height: 1.7;
+ --line-height: 3.6rem;
 
  --section-padding: 15rem 0rem;
  --section-header-margin: 2rem 0rem 4rem 0rem;
@@ -27,7 +27,6 @@ export default createGlobalStyle`
  --container-blog-post-max-width: 80rem;
 
 
- /* Breakpoints */
 }
 
 
@@ -43,6 +42,7 @@ export default createGlobalStyle`
 *::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: none;
+    box-shadow: none;
 	background-color: transparent;
 }
 

@@ -1,3 +1,4 @@
+import React from "react"
 import styled from "styled-components"
 
 const linkSizes = {
@@ -8,7 +9,7 @@ const linkSizes = {
   large: 2,
 }
 
-const A = styled.a`
+const AStyles = styled.a`
   color: ${props => props.theme.link};
   font-weight: var(--font-regular);
   font-size: ${linkSizes.a}rem;
@@ -21,7 +22,7 @@ const A = styled.a`
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: auto 0.3rem;
-  transition: color 0.15s ease-out, background-size 0.15s ease-in-out;
+  transition: color 0.05s ease-out, background-size 0.1s ease-in-out;
   cursor: pointer;
   padding-bottom: 0.2rem;
 
@@ -32,4 +33,6 @@ const A = styled.a`
   }
 `
 
-export default A
+export default function A({ className, ...theRest }) {
+  return <AStyles className={className} {...theRest} />
+}

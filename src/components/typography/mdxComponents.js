@@ -1,7 +1,7 @@
 import React from "react"
 import Code from "../Code"
 
-import { H, P, A, Ul, InlineCode } from "./index"
+import { H, P, A, Ul, InlineCode, Bold } from "./index"
 
 const mdxComponents = {
   h1: props => <H as="h1" {...props}></H>,
@@ -9,11 +9,12 @@ const mdxComponents = {
   h3: props => <H as="h3" {...props}></H>,
   h4: props => <H as="h4" {...props}></H>,
   h5: props => <H as="h5" {...props}></H>,
-  p: props => <P {...props}></P>,
-  span: props => <P as="span" {...props}></P>,
+  p: props => <P {...props} />,
+  ul: props => <Ul {...props} />,
+  strong: props => <Bold {...props} />,
+  span: props => <P as="span" {...props} />,
   a: props => <A target="_blank" {...props} />,
   inlineCode: props => <InlineCode {...props} />,
-  ul: props => <Ul {...props} />,
   pre: props => {
     if (props.children.props.mdxType !== "code") return
 

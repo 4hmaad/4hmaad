@@ -18,11 +18,9 @@ const NavStyles = styled.nav`
     margin-left: auto;
   }
 
-  @media (max-width: 21.875em) {
-    padding: 2rem 0rem;
-
-    ul {
-      margin: 0;
+  @media (max-width: 20.76em) {
+    li {
+      margin: 1.3rem;
     }
   }
 
@@ -36,8 +34,8 @@ const LogoText = styled(Link)`
   font-weight: var(--font-medium);
   font-family: var(--font-text);
   text-decoration: none;
-  font-size: 2.5rem;
-  margin-right: 3rem;
+  font-size: 2rem;
+  margin-right: 2rem;
 `
 
 const ThemeIcon = styled.svg`

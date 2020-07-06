@@ -1,6 +1,7 @@
+import React from "react"
 import styled from "styled-components"
 
-const Ul = styled.ul`
+const UlStyles = styled.ul`
   list-style-type: square;
   padding: 0 2rem;
   font-size: var(--font-md);
@@ -15,4 +16,6 @@ const Ul = styled.ul`
   }
 `
 
-export default Ul
+export default function Ul({ className, ...theRest }) {
+  return <UlStyles className={className} {...theRest} />
+}

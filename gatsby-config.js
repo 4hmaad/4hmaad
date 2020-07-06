@@ -16,25 +16,12 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1035,
-              linkImagesToOriginal: false,
+              maxWidth: 1500,
               withWebp: true,
-              sizeByPixelDensity: true,
             },
           },
         ],
       },
-      plugins: [
-        {
-          resolve: `gatsby-remark-images`,
-          options: {
-            maxWidth: 1035,
-            linkImagesToOriginal: false,
-            withWebp: true,
-            sizeByPixelDensity: true,
-          },
-        },
-      ],
     },
     {
       resolve: "gatsby-source-filesystem",
@@ -62,12 +49,12 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Raleway`,
-            variants: ["400", "500"],
-          },
-          {
             family: `Open Sans`,
             variants: [`800`],
+          },
+          {
+            family: `Raleway`,
+            variants: [`400`, `600`],
           },
         ],
       },

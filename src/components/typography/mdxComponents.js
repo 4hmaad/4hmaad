@@ -13,7 +13,7 @@ const mdxComponents = {
   ul: props => <Ul {...props} />,
   strong: props => <Bold {...props} />,
   span: props => <P as="span" {...props} />,
-  a: props => <A target="_blank" {...props} />,
+  a: props => <A dashed target="_blank" {...props} />,
   inlineCode: props => <InlineCode {...props} />,
   blockquote: props => <Quote {...props} />,
   pre: props => {

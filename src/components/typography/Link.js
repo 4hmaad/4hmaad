@@ -1,5 +1,21 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
+
+const DotsEffects = css`
+  border-bottom: 2px ${props => props.theme.text} dashed;
+`
+
+const BorderEffects = css`
+  background-image: linear-gradient(
+    ${props => props.theme.mainColor},
+    ${props => props.theme.mainColor}
+  );
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: auto 0.3rem;
+  transition: color 0.05s ease-out, background-size 0.1s ease-in-out;
+  padding-bottom: 0.2rem;
+`
 
 const linkSizes = {
   // rem
@@ -15,16 +31,9 @@ const AStyles = styled.a`
   font-size: ${linkSizes.a}rem;
   font-size: ${props => props.size && `${linkSizes[props.size]}rem`};
   text-decoration: none;
-  background-image: linear-gradient(
-    ${props => props.theme.mainColor},
-    ${props => props.theme.mainColor}
-  );
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  background-size: auto 0.3rem;
-  transition: color 0.05s ease-out, background-size 0.1s ease-in-out;
   cursor: pointer;
-  padding-bottom: 0.2rem;
+
+  ${props => (props.dashed ? DotsEffects : BorderEffects)}
 
   &:hover,
   &:focus {

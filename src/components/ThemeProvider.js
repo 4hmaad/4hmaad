@@ -8,8 +8,6 @@ const defaultContextData = ["dark", () => {}]
 const ThemeContext = React.createContext(defaultContextData)
 
 const ThemeProvider = props => {
-  console.log(props)
-
   const [themeState, toggleTheme] = useEffectThemeMode()
 
   if (!themeState.hasComponentMounted) {
@@ -21,8 +19,6 @@ const ThemeProvider = props => {
      * when he revisits the app again, the app will render the default theme while getting
      * the theme from localStorage, after the theme is loaded the app will have to re-render again
      * to display the new theme.
-     *
-     * TODO: Convert this div to spinner maybe?
      */
     return <div />
   }

@@ -36,7 +36,7 @@ export const FeaturedProjects = () => {
             repo
             image {
               childImageSharp {
-                fluid(maxWidth: 1000, quality: 80) {
+                fluid {
                   base64
                   aspectRatio
                   src

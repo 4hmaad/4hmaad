@@ -8,7 +8,7 @@ const FooterStyles = styled.section`
   margin: 8rem 0;
   margin-bottom: 2rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
 
   & > div {
@@ -24,14 +24,6 @@ const FooterStyles = styled.section`
 
 const Footer = () => (
   <FooterStyles>
-    <P size="medium" as="span">
-      Made by Ahmad (Me)
-    </P>
-
-    <P size="medium" as="span">
-      © 2020. All rights reserved.
-    </P>
-
     <div>
       {
         // TODO: Add the linkedin profile URL
@@ -43,6 +35,9 @@ const Footer = () => (
         <GithubIcon />
       </a>
     </div>
+    <P size="medium" as="span">
+      © 2020
+    </P>
   </FooterStyles>
 )
 

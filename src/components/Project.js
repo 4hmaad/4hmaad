@@ -32,6 +32,10 @@ const ProjectImageContainer = styled.a`
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 60px -15px;
   }
+
+  @media (max-width: 46.75em) {
+    grid-row: 1;
+  }
 `
 
 const ProjectLinksContainer = styled.div`

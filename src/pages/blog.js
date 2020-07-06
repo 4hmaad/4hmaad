@@ -48,10 +48,10 @@ export const postsQuery = graphql`
     ) {
       nodes {
         id
-        excerpt(pruneLength: 200)
         frontmatter {
           title
           date(formatString: "Do MMMM YYYY")
+          description
         }
 
         fields {

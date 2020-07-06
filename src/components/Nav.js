@@ -18,9 +18,18 @@ const NavStyles = styled.nav`
     margin-left: auto;
   }
 
-  @media (max-width: 20.76em) {
+  @media (max-width: 23.75em) {
     li {
+      font-size: 1.8rem;
       margin: 1.3rem;
+    }
+  }
+
+  @media (max-width: 20.125em) {
+    padding: 2rem 0rem;
+    ul {
+      margin-left: 0;
+      flex-wrap: wrap;
     }
   }
 
@@ -31,7 +40,7 @@ const NavStyles = styled.nav`
 
 const LogoText = styled(Link)`
   color: ${props => props.theme.text};
-  font-weight: var(--font-medium);
+  font-weight: var(--font-regular);
   font-family: var(--font-text);
   text-decoration: none;
   font-size: 2rem;
@@ -49,7 +58,6 @@ const NavUl = styled.ul`
   align-items: center;
   font-size: var(--font-md);
   font-family: var(--font-text);
-  font-weight: var(--font-medium);
 `
 
 const NavLi = styled.li`
@@ -61,6 +69,7 @@ const NavLi = styled.li`
     color: ${props => props.theme.link};
     text-decoration: none;
     transition: color 0.2s ease;
+    font-weight: var(--font-regular);
 
     &:hover,
     &:active {

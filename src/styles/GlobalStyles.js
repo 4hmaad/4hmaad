@@ -5,7 +5,7 @@ export default createGlobalStyle`
 :root {
   --font-bold: 800;
   --font-regular: 400;
-  --font-medium: 500;
+  --font-medium: 600;
 
   --font-xs: 1.4rem; /* Used for P and A */
   --font-sm: 1.8rem;  /* Used for H5,P and A */
@@ -69,11 +69,11 @@ html {
     }
 
     @media (max-width: 56.25em) {
-        font-size: 50%;
+        font-size: 51%;
     }
 
     @media (max-width: 37.5em) {
-        font-size:48%
+        font-size:46%
     }
 
 }
@@ -118,11 +118,7 @@ h5 {
 p {
     display:block;
     font-weight: var(--font-regular);
-    margin: 2rem 0rem;
-}
-
-a {
-    font-weight: var(--font-medium);
+    margin: 2rem 0rem; 
 }
 
 

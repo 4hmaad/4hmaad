@@ -12,6 +12,12 @@ import { H, P } from "../components/typography"
 const PostContainer = styled.div`
   max-width: var(--container-blog-post-max-width);
   margin: 7rem auto;
+
+  @media (max-width: 37.5em) {
+    p {
+      font-size: 16px;
+    }
+  }
 `
 
 const PostFrontMatter = styled.div`

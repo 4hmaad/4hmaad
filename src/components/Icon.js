@@ -5,8 +5,6 @@ const Icon = ({ type, className, fill, size }) => {
   const icon = simpleIcons.get(type)
   fill = fill ? fill : `#${icon.hex}`
 
-  console.log(icon)
-
   return (
     <div
       style={{

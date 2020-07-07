@@ -41,8 +41,8 @@ const FOOTER_LINKS = [
 const Footer = () => (
   <FooterStyles>
     <div>
-      {FOOTER_LINKS.map(({ title, url }) => (
-        <A simple href={url}>
+      {FOOTER_LINKS.map(({ title, url }, idx) => (
+        <A key={idx} simple href={url}>
           <Icon type={title} size="4rem" />
         </A>
       ))}

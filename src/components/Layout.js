@@ -50,7 +50,7 @@ const Layout = ({ location, children, pageContext, data }) => {
       publishedDate: date,
     }
   } else {
-    var SeoProps = {
+    SeoProps = {
       description: MetaDescription,
       title: location.pathname === "/blog/" ? `Blog | ${author}` : MetaTitle,
       image: defaultImage,

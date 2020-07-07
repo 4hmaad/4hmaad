@@ -27,7 +27,7 @@ export const lightTheme = {
   mainColor: yellow,
 
   body: light,
-  bodySecondary: light1,
+  bodySecondary: light3,
 
   header: dark,
   text: dark,

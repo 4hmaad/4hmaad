@@ -1,13 +1,20 @@
 module.exports = {
   siteMetadata: {
     title: "Ahmad Nawaz Khan | Web Developer",
-    description: 'Web developer"',
+    description: `This is my personal website where I write about Javascript, React and GraphQL.`,
     author: "Ahmad Nawaz Khan",
+    image: `/default-image.png`,
+    siteUrl: `https://ahmadnawaz.web.app`,
+    siteLanguage: `en-GB`,
+    siteLocale: `en_gb`,
+    twitterUsername: `@4hmaad`,
+    copyrightYear: new Date().getFullYear(),
   },
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: "gatsby-plugin-mdx",
       options: {

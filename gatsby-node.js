@@ -45,6 +45,7 @@ async function convertMdxToPosts({ graphql, createPage }) {
         collection: "post",
         previous,
         next,
+        pathPrefix: "/blog",
       },
     })
   })
@@ -63,7 +64,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: `slug`,
       node,
-      value: generatedSlug,
+      value: node.frontmatter.slug
+        ? `/${node.frontmatter.slug}/`
+        : generatedSlug,
     })
 
     createNodeField({

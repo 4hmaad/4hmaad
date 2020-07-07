@@ -1,7 +1,7 @@
 import React from "react"
 import styled, { css } from "styled-components"
 
-const DotsEffects = css`
+const DashedEffects = css`
   border-bottom: 2px ${props => props.theme.text} dashed;
 `
 
@@ -15,6 +15,12 @@ const BorderEffects = css`
   background-size: auto 0.3rem;
   transition: color 0.05s ease-out, background-size 0.1s ease-in-out;
   padding-bottom: 0.2rem;
+
+  &:hover,
+  &:focus {
+    background-size: auto 100%;
+    color: ${props => props.theme.dark};
+  }
 `
 
 const linkSizes = {
@@ -33,13 +39,7 @@ const AStyles = styled.a`
   text-decoration: none;
   cursor: pointer;
 
-  ${props => (props.dashed ? DotsEffects : BorderEffects)}
-
-  &:hover,
-  &:focus {
-    background-size: auto 100%;
-    color: ${props => props.theme.dark};
-  }
+  ${props => (props.dashed ? DashedEffects : BorderEffects)}
 `
 
 export default function A({ className, ...theRest }) {

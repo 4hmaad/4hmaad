@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { H, P, A } from "./typography"
-import { LinkedInIcon, GithubIcon } from "./icons"
+import Icon from "./Icon"
 
 const FooterStyles = styled.section`
   margin: 8rem 0;
@@ -29,10 +29,10 @@ const Footer = () => (
         // TODO: Add the linkedin profile URL
       }
       <a href="#">
-        <LinkedInIcon />
+        <Icon type="linkedIn" />
       </a>
-      <a target="_blank" href="https://github.com/4hmaad">
-        <GithubIcon />
+      <a href="https://github.com/4hmaad">
+        <Icon type="github" />
       </a>
     </div>
     <P size="medium" as="span">

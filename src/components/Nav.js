@@ -3,8 +3,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import { Link as ScrollLink } from "react-scroll"
 import { ThemeContext } from "./ThemeProvider"
-
-import { SunIcon, MoonIcon } from "./icons"
+import { Sun, Moon } from "react-feather"
 
 const NavStyles = styled.nav`
   height: 9rem;
@@ -50,6 +49,7 @@ const LogoText = styled(Link)`
 const ThemeIcon = styled.svg`
   width: 2.5rem;
   height: 2.5rem;
+  fill: ${props => props.theme.text};
 `
 
 const NavUl = styled.ul`
@@ -136,9 +136,9 @@ const Nav = ({ forBlog = false }) => {
         <NavLi>
           <ThemeToggler onClick={themeToggle}>
             {currentTheme === "dark" ? (
-              <ThemeIcon as={SunIcon} />
+              <ThemeIcon as={Sun} />
             ) : (
-              <ThemeIcon as={MoonIcon} />
+              <ThemeIcon as={Moon} />
             )}
           </ThemeToggler>
         </NavLi>

@@ -1,7 +1,9 @@
 import React, { useState } from "react"
 import { Link as ScrollLink } from "react-scroll"
 import styled from "styled-components"
+
 import { A, H, P } from "../typography"
+import Icon from "../Icon"
 
 const AboutStyles = styled.section`
   padding: var(--section-padding);
@@ -40,51 +42,65 @@ const SkillsFilters = styled.ul`
 const SkillsUl = styled.ul`
   list-style-type: none;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
-  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  grid-gap: 3rem;
+  margin-top: 4rem;
 
   & > li {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
 
-    &::before {
-      content: "";
-      background-image: url(arrow.svg);
-      background-repeat: no-repeat;
-      background-position: center;
-      height: 4rem;
-      width: 4rem;
+    span {
+      font-size: var(--font-xs);
+    }
+
+    svg {
+      width: 4.5rem;
+      height: 4.5rem;
     }
   }
 `
 
 const skillsData = {
   Technologies: [
-    "Javascript (ES6+)",
+    "Javascript",
     "PHP",
     "GraphQL",
     "Styled-Components",
-    "CSS (Grid + FlexBox)",
-    "SCSS",
+    "Redux",
+    "Apollo GraphQL",
+    "CSS3",
+    "Sass",
     "HTML5",
   ],
   Databases: ["MySQL", "Firebase", "MongoDB"],
-  Frameworks: ["React.js", "Gatsby.js", "Bootstrap (CSS)"],
+  Frameworks: ["React", "Gatsby", "Bootstrap"],
 }
 
 const About = () => {
   const [currentFilter, setFilter] = useState(null)
 
   const renderSkills = () => {
+    const skillHTML = (skill, idx) => (
+      <li key={idx}>
+        <Icon type={skill.toLowerCase()} />
+        <P as="span" small>
+          {skill}
+        </P>
+      </li>
+    )
+
     if (currentFilter && currentFilter in skillsData) {
-      return skillsData[currentFilter].map((skill, idx) => (
-        <li key={idx}>{skill}</li>
-      ))
+      return skillsData[currentFilter].map((skill, idx) =>
+        skillHTML(skill, idx)
+      )
     }
 
     return Object.values(skillsData)
       .flat()
-      .map((skill, idx) => <li key={idx}>{skill}</li>)
+      .map((skill, idx) => skillHTML(skill, idx))
   }
 
   const onFilterClick = e => {

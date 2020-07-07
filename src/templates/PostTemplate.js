@@ -3,13 +3,7 @@ import styled from "styled-components"
 import { graphql, Link } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import useSiteMetadata from "./../hooks/useSiteMetaData"
-
-import Layout from "../components/Layout"
-import SEO from "./../components/Seo"
-
 import Footer from "../components/Footer"
-import Nav from "../components/Nav"
 
 import { H, P, A } from "../components/typography"
 
@@ -67,36 +61,9 @@ const PostFooter = styled.div`
   border: 2px dotted ${props => props.theme.mainColor};
 `
 
-export default ({ data: { mdx: post }, pageContext }) => {
-  const {
-    author,
-    siteUrl,
-    siteLanguage,
-    siteLocale,
-    twitterUsername,
-    image,
-  } = useSiteMetadata()
-
+export default ({ data: { mdx: post } }) => {
   return (
-    <Layout>
-      <SEO
-        title={post.frontmatter.title}
-        description={post.excerpt}
-        image={
-          post.image === null
-            ? `${siteUrl}${image}`
-            : `${siteUrl}${post.image?.publicURL}`
-        }
-        siteUrl={`${siteUrl}${post.fields.slug}`}
-        siteLanguage={siteLanguage}
-        siteLocale={siteLocale}
-        twitterUsername={twitterUsername}
-        author={author}
-        article={true}
-        publishedDate={post.frontmatter.date}
-      />
-
-      <Nav forBlog />
+    <>
       <PostContainer>
         <>
           <PostFrontMatter>
@@ -136,7 +103,7 @@ export default ({ data: { mdx: post }, pageContext }) => {
         </>
       </PostContainer>
       <Footer />
-    </Layout>
+    </>
   )
 }
 

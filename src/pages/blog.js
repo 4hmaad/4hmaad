@@ -4,11 +4,8 @@ import { graphql } from "gatsby"
 
 import { H } from "../components/typography/"
 
-import Layout from "./../components/Layout"
-
-import Footer from "../components/Footer"
-import Nav from "./../components/Nav"
 import BlogPostPreview from "./../components/BlogPostPreview"
+import Footer from "../components/Footer"
 
 const BlogStyles = styled.div`
   margin-top: 6rem;
@@ -21,14 +18,13 @@ const BlogStyles = styled.div`
   }
 `
 
-export default ({ data }) => {
+export default function Blog({ data }) {
   const {
     allMdx: { nodes: posts },
   } = data
 
   return (
-    <Layout>
-      <Nav forBlog />
+    <>
       <H as="h2">Latest Articles</H>
       <BlogStyles>
         {posts.map(post => (
@@ -36,7 +32,7 @@ export default ({ data }) => {
         ))}
       </BlogStyles>
       <Footer />
-    </Layout>
+    </>
   )
 }
 

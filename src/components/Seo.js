@@ -5,6 +5,7 @@ export default function SEO({
   title,
   titleTemplate,
   description,
+  pathname = "/",
   siteUrl,
   article = false,
   image,
@@ -29,7 +30,7 @@ export default function SEO({
         titleTemplate={titleTemplate ? `| ${titleTemplate}` : ""}
       >
         <html lang={siteLanguage ? siteLanguage : "en"} />
-        <link rel="canonical" href={siteUrl} />
+        <link rel="canonical" href={`${siteUrl}${pathname}`} />
         <meta name="description" content={modifiedParams.description} />
 
         <link
@@ -53,7 +54,7 @@ export default function SEO({
 
         {/* Facebook  */}
         <meta property="og:locale" content={siteLocale} />
-        <meta property="og:url" content={siteUrl} />
+        <meta property="og:url" content={`${siteUrl}${pathname}`} />
         <meta property="og:type" content={article ? "article" : "website"} />
         <meta property="og:title" content={modifiedParams.title} />
         <meta property="og:description" content={modifiedParams.description} />

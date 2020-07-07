@@ -1,3 +1,6 @@
+require("typeface-playfair-display")
+require("typeface-open-sans")
+require("typeface-raleway")
 const React = require("react")
 const Layout = require("./src/components/Layout").default
 

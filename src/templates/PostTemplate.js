@@ -3,11 +3,15 @@ import styled from "styled-components"
 import { graphql, Link } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
+import useSiteMetadata from "./../hooks/useSiteMetaData"
+
 import Layout from "../components/Layout"
+import SEO from "./../components/Seo"
+
 import Footer from "../components/Footer"
 import Nav from "../components/Nav"
 
-import { H, P } from "../components/typography"
+import { H, P, A } from "../components/typography"
 
 const PostContainer = styled.div`
   max-width: var(--container-blog-post-max-width);
@@ -58,14 +62,44 @@ const PostBody = styled.div`
     }
   }
 `
+const PostFooter = styled.div`
+  padding: 2rem 2rem;
+  border: 2px dotted ${props => props.theme.mainColor};
+`
 
 export default ({ data: { mdx: post }, pageContext }) => {
+  const {
+    author,
+    siteUrl,
+    siteLanguage,
+    siteLocale,
+    twitterUsername,
+    image,
+  } = useSiteMetadata()
+
   return (
     <Layout>
+      <SEO
+        title={post.frontmatter.title}
+        description={post.excerpt}
+        image={
+          post.image === null
+            ? `${siteUrl}${image}`
+            : `${siteUrl}${post.image?.publicURL}`
+        }
+        siteUrl={`${siteUrl}${post.fields.slug}`}
+        siteLanguage={siteLanguage}
+        siteLocale={siteLocale}
+        twitterUsername={twitterUsername}
+        author={author}
+        article={true}
+        publishedDate={post.frontmatter.date}
+      />
+
       <Nav forBlog />
       <PostContainer>
         <>
-          <PostFrontMatter className="frontmatter">
+          <PostFrontMatter>
             <H className="title" as="h2">
               {post.frontmatter.title}
             </H>
@@ -88,6 +122,17 @@ export default ({ data: { mdx: post }, pageContext }) => {
           <PostBody>
             <MDXRenderer>{post.body}</MDXRenderer>
           </PostBody>
+
+          <PostFooter>
+            <P>
+              If you liked this post I'm sure you'll love what I usually share
+              on{" "}
+              <A dashed href="https://twitter.com/4hmaad">
+                Twitter
+              </A>
+              .
+            </P>
+          </PostFooter>
         </>
       </PostContainer>
       <Footer />
@@ -99,14 +144,19 @@ export const postQuery = graphql`
   query PostBySlug($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       id
+      excerpt(pruneLength: 240)
       frontmatter {
         title
         date(formatString: "Do MMMM YYYY")
+        description
+        image {
+          publicURL
+        }
       }
+      body
       fields {
         slug
       }
-      body
     }
   }
 `

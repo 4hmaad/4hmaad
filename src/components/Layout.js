@@ -13,7 +13,6 @@ const PageContainer = styled.div`
 const Layout = ({ children }) => {
   return (
     <ThemeProvider>
-      <Head />
       <GlobalStyles />
       <PageContainer>{children}</PageContainer>
     </ThemeProvider>

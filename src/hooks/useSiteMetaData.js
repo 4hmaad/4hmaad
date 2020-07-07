@@ -9,6 +9,11 @@ const useSiteMetadata = () => {
             title
             description
             author
+            image
+            siteUrl
+            siteLanguage
+            siteLocale
+            twitterUsername
           }
         }
       }

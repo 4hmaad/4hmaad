@@ -44,7 +44,11 @@ const BlogPostPreview = ({ post }) => (
     <H className="title" as="h3">
       {post.frontmatter.title}
     </H>
-    {post.description ? <P>{post.description}</P> : null}
+    {post.frontmatter.description ? (
+      <P>{post.frontmatter.description}</P>
+    ) : (
+      <P>{post.excerpt}</P>
+    )}
     <Link className="link" to={post.fields.slug} />
   </PostPreviewStyles>
 )

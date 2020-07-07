@@ -1,12 +1,13 @@
 import React from "react"
 import styled from "styled-components"
 import Highlight, { defaultProps } from "prism-react-renderer"
-import theme from "prism-react-renderer/themes/nightOwl"
+import theme from "prism-react-renderer/themes/dracula"
 
 const Pre = styled.pre`
+  position: relative;
   text-align: left;
   margin: 2rem 0;
-  padding: 0.5rem;
+  padding: 2rem 3rem;
   overflow-x: auto;
   border-radius: 3px;
   font-family: var(--font-code);
@@ -21,12 +22,21 @@ const LineNo = styled.span`
   user-select: none;
   opacity: 0.3;
   margin-right: 0.5rem;
+  display: none;
+`
+const LanguageName = styled.span`
+  position: absolute;
+  color: ${props => props.theme.light};
+  background: ${props => props.theme.codeColor};
+  text-transform: uppercase;
+  bottom: 0;
+  border-top-left-radius: 4px;
+  right: 0;
+  padding: 0.05rem 0.8rem;
+  font-size: var(--font-xs);
 `
 
 const Code = ({ codeString, language }) => {
-  console.log(codeString, language)
-  console.log(defaultProps)
-
   return (
     <Highlight
       {...defaultProps}
@@ -35,13 +45,10 @@ const Code = ({ codeString, language }) => {
       theme={theme}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => {
-        console.log({ className, style, tokens, getLineProps, getTokenProps })
-
         return (
           <Pre className={className} style={style}>
             {tokens.map((line, i) => (
               <div {...getLineProps({ line, key: i })}>
-                <LineNo>{i + 1}</LineNo>
                 {line.map((token, key) => (
                   <span {...getTokenProps({ token, key })} />
                 ))}

@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 
+import { H } from "../components/typography/"
+
 import Layout from "./../components/Layout"
 
 import Footer from "../components/Footer"
@@ -11,7 +13,7 @@ import BlogPostPreview from "./../components/BlogPostPreview"
 const BlogStyles = styled.div`
   margin-top: 6rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
   grid-gap: 3rem;
 
   @media (max-width: 36.5em) {
@@ -27,6 +29,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <Nav forBlog />
+      <H as="h2">Latest Articles</H>
       <BlogStyles>
         {posts.map(post => (
           <BlogPostPreview key={post.id} post={post} />
@@ -48,6 +51,7 @@ export const postsQuery = graphql`
     ) {
       nodes {
         id
+        excerpt(pruneLength: 240)
         frontmatter {
           title
           date(formatString: "Do MMMM YYYY")

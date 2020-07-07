@@ -39,9 +39,17 @@ const AStyles = styled.a`
   text-decoration: none;
   cursor: pointer;
 
-  ${props => (props.dashed ? DashedEffects : BorderEffects)}
+  ${props =>
+    props.dashed ? DashedEffects : props.simple ? null : BorderEffects}
 `
 
 export default function A({ className, ...theRest }) {
-  return <AStyles className={className} {...theRest} />
+  return (
+    <AStyles
+      rel="noopener noreferrer nofollow"
+      target="_blank"
+      className={className}
+      {...theRest}
+    />
+  )
 }

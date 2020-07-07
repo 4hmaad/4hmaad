@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import { H, P, A } from "./typography"
+import { P, A } from "./typography"
 import Icon from "./Icon"
 
 const FooterStyles = styled.section`
@@ -15,25 +15,37 @@ const FooterStyles = styled.section`
     & svg {
       cursor: pointer;
       margin: 0rem 1rem;
-      height: 1.8rem;
-      width: 1.8rem;
+      height: 2rem;
+      width: 2rem;
       fill: ${props => props.theme.text};
     }
   }
 `
 
+const FOOTER_LINKS = [
+  {
+    title: "twitter",
+    url: "https://twitter.com/4hmaad",
+  },
+  {
+    title: "Github",
+    url: "https://github.com/4hmaad",
+  },
+
+  {
+    title: "dev.to",
+    url: "https://dev.to/4hmaad",
+  },
+]
+
 const Footer = () => (
   <FooterStyles>
     <div>
-      {
-        // TODO: Add the linkedin profile URL
-      }
-      <a href="#">
-        <Icon type="linkedIn" />
-      </a>
-      <a href="https://github.com/4hmaad">
-        <Icon type="github" />
-      </a>
+      {FOOTER_LINKS.map(({ title, url }) => (
+        <A simple href={url}>
+          <Icon type={title} size="4rem" />
+        </A>
+      ))}
     </div>
     <P size="medium" as="span">
       © 2020

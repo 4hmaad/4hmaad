@@ -1,7 +1,7 @@
 import React from "react"
 import simpleIcons from "simple-icons"
 
-const Icon = ({ type, className, fill }) => {
+const Icon = ({ type, className, fill, size }) => {
   const icon = simpleIcons.get(type)
   fill = fill ? fill : `#${icon.hex}`
 

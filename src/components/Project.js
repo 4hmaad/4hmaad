@@ -69,7 +69,13 @@ const Project = props => {
         </ListUi>
 
         <ProjectLinksContainer>
-          <Button small primary href={site}>
+          <Button
+            small
+            primary
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            href={site}
+          >
             Visit Site
           </Button>
           <A size="medium" href={repo}>

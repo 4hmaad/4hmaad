@@ -36,11 +36,11 @@ const MainButton = css`
 `
 
 const MiniButtonStyles = css`
-  padding: 0.4rem 1.8rem;
+  padding: 0.2rem 1.4rem;
   font-size: var(--font-xs);
 `
 const NormalButtonStyles = css`
-  padding: 0.8rem 2rem;
+  padding: 0.4rem 1.8rem;
   font-size: var(--font-sm);
 `
 const LargeButtonStyles = css`

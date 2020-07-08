@@ -28,7 +28,7 @@ const FOOTER_LINKS = [
     url: "https://twitter.com/4hmaad",
   },
   {
-    title: "Github",
+    title: "github",
     url: "https://github.com/4hmaad",
   },
 
@@ -43,7 +43,7 @@ const Footer = () => (
     <div>
       {FOOTER_LINKS.map(({ title, url }, idx) => (
         <A key={idx} simple href={url}>
-          <Icon type={title} size="4rem" />
+          <Icon type={title} size="2rem" />
         </A>
       ))}
     </div>

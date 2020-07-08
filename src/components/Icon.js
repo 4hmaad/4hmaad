@@ -1,19 +1,21 @@
 import React from "react"
-import simpleIcons from "simple-icons"
+import icons from "./../data/icons.js"
 
-const Icon = ({ type, className, fill, size }) => {
-  const icon = simpleIcons.get(type)
-  fill = fill ? fill : `#${icon.hex}`
+const Icon = ({ type, className, size = "" }) => {
+  type = type.replace(/[^A-Z0-9]/gi, "")
 
   return (
-    <div
-      style={{
-        fill,
-        display: "inline-block",
-      }}
+    <svg
+      role="img"
       className={className}
-      dangerouslySetInnerHTML={{ __html: icon.svg }}
-    />
+      fill={icons[type].fill}
+      style={{ width: `${size}`, height: `${size}` }}
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <title>{icons[type].title}</title>
+      <path d={icons[type].path} />
+    </svg>
   )
 }
 

@@ -117,15 +117,10 @@ const About = () => {
     <AboutStyles id="about">
       <H>About Me</H>
 
-      <H as="h4">A Web Software Developer</H>
-
+      <H as="h4">A Software Developer</H>
+    
       <P>
-        I create performant and secure apps to make humans life easier, I also
-        occasionally write articles on Javascript and other frameworks/tools.
-      </P>
-
-      <P>
-        I started my coding journey back when I first learned C++ in college, I
+        I started my coding journey back when I first learned C in school, I
         liked how you could tell a computer to do something for you, so, I fell
         in love with it, and since then I have been coding most of the time.
       </P>
@@ -137,18 +132,7 @@ const About = () => {
       </P>
 
       <P>
-        I am currently freelancing so if you have any web development needs,
-        feel free to{" "}
-        <A
-          to="contact"
-          as={ScrollLink}
-          smooth={true}
-          offset={100}
-          duration={1500}
-        >
-          contact
-        </A>
-        .
+        I am currently working at <A href="https://veeve.io/">VeeveAI</A>.
       </P>
 
       <SkillsContainer>
